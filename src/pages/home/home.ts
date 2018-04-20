@@ -17,7 +17,18 @@ export class HomePage {
 
   }
 
+  //lifecycle method
   ionViewDidLoad() {
     this.products = this.restProvider.getProducts();
+  }
+
+  //move to details page
+  navToProductDetail(product:Product) {
+    this.navCtrl.push("ProductPage", {product:product});
+  }
+
+  //
+  createProduct() {
+    this.navCtrl.push("ProductPage", {product:{}});
   }
 }
